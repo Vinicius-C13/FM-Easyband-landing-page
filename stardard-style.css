@@ -1,0 +1,152 @@
+:root {
+    /*colors*/
+    --clr-dark-Blue: hsl(233, 26%, 24%);
+    --clr-lime-green: hsl(136, 65%, 51%);
+    --clr-bright-cyan: hsl(192, 70%, 51%);
+
+    --clr-grayish-blue: hsl(233, 8%, 62%);
+    --clr-light-grayish-blue: hsl(220, 16%, 96%);
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --side-padding: clamp(40px, 10vw, 150px);
+
+    /*Font-size*/
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1.75rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.8rem;
+    }
+    
+    @media (min-width: 35rem){
+        :root{
+            --fs-800: 5rem;
+            --fs-700: 2rem;
+            --fs-600: 1.5rem;
+            --fs-400: .8rem;
+        }
+    }
+
+    @media (min-width: 45rem){
+        :root{
+            --fs-800: 6.25rem;
+            --fs-700: 2.7rem;
+            --fs-600: 2rem;
+            --fs-400: 1rem;
+        }
+    }
+
+
+
+/*-----------------*/
+/*Reset            */
+/*-----------------*/
+
+/*box-sizing*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*margin*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+picture{
+    margin: 0;
+}
+
+/*font-weight*/
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+    font-weight: 400;
+}
+
+/*body*/
+body{
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--fs-300);
+    color: rgb(var(--clr-dark));
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    overflow-x: hidden;
+}
+
+/*make images easy to work with*/
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/*make form elements easy to work with*/
+input,
+button,
+textarea,
+select{
+    font: inherit;
+}
+
+/*Add a default margin to section*/
+section {margin-top: 2rem;}
+
+/*-----------------*/
+/*Utility Classes  */
+/*-----------------*/
+
+.grid {display: grid}
+
+.four-items-grid {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+}
+
+.txt-blue {color: var(--clr-dark-Blue);}
+
+.txt-gray {color: var(--clr-grayish-blue)}
+
+.txt-light-gray {color: var(--clr-light-grayish-blue)}
+
+.txt-white {color: var(--clr-white)}
+
+.fs-900{font-size: var(--fs-900)}
+.fs-800{font-size: var(--fs-800)}
+.fs-700{font-size: var(--fs-700)}
+.fs-600{font-size: var(--fs-600)}
+.fs-500{font-size: var(--fs-500)}
+.fs-400{font-size: var(--fs-400)}
+.fs-300{font-size: var(--fs-300)}
+.fs-200{font-size: var(--fs-200)}
+
+.flex {display: flex}
+
+.green-btn {
+    max-width: fit-content;
+    background-image:linear-gradient(0.25turn, var(--clr-lime-green), var(--clr-bright-cyan));
+    color: var(--clr-white);
+    border-radius: 30px;
+    border: none;
+    font-size: var(--fs-200);
+    padding: 5px 15px;
+}
+
+.green-btn:hover {
+    cursor: pointer;
+    background-image: linear-gradient(0.25turn, var(--clr-lime-green) 100%, var(--clr-bright-cyan));
+}

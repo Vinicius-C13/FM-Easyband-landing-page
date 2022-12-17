@@ -1,0 +1,70 @@
+/*-----------------*/
+/*General          */
+/*-----------------*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-inline: var(--side-padding);
+    background-color: var(--clr-white);
+    z-index: 2;
+}
+
+header > * {
+    height: fit-content;
+}
+
+.header--nav {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    gap: clamp(8px, 1.5vw, 20px); 
+}
+
+.header--nav > * {
+    border-bottom: 2px solid transparent;
+}
+
+.section-1 {
+    position: relative;
+    margin: 0px;
+    grid-template-columns: 40vw 55vw;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 90vh;
+    background-color: var(--clr-light-grayish-blue);
+}
+
+.section-1--text {
+    margin-left: var(--side-padding);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bg-positioner {
+    height: 100%;
+    width: 100%;
+    background: url(./images/bg-intro-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: left;
+}
+
+.cellphones-image{
+    position: absolute;
+    top: -25%;
+    right: -8%;
+    min-width: 500px;
+    max-width: 50vw;
+}
+
+/*-----------------*/
+/*Pseudo-classes   */
+/*-----------------*/
+
+.header--nav > *:hover {
+    cursor: pointer;
+    border-color: var(--clr-dark-Blue)
+}
