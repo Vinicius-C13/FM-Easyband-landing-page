@@ -1,6 +1,6 @@
 :root {
     /*colors*/
-    --clr-dark-Blue: hsl(233, 26%, 24%);
+    --clr-dark-blue: hsl(233, 26%, 24%);
     --clr-lime-green: hsl(136, 65%, 51%);
     --clr-bright-cyan: hsl(192, 70%, 51%);
 
@@ -20,6 +20,7 @@
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.8rem;
+    --fs-100: 0.6rem;
     }
     
     @media (min-width: 35rem){
@@ -104,7 +105,7 @@ select{
 }
 
 /*Add a default margin to section*/
-section {margin-top: 2rem;}
+section {padding-top: 4rem;}
 
 /*-----------------*/
 /*Utility Classes  */
@@ -117,7 +118,7 @@ section {margin-top: 2rem;}
     column-gap: 20px;
 }
 
-.txt-blue {color: var(--clr-dark-Blue);}
+.txt-blue {color: var(--clr-dark-blue);}
 
 .txt-gray {color: var(--clr-grayish-blue)}
 
@@ -133,6 +134,7 @@ section {margin-top: 2rem;}
 .fs-400{font-size: var(--fs-400)}
 .fs-300{font-size: var(--fs-300)}
 .fs-200{font-size: var(--fs-200)}
+.fs-100{font-size: var(--fs-100)}
 
 .flex {display: flex}
 
