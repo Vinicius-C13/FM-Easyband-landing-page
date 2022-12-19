@@ -10,6 +10,7 @@ header {
     padding-inline: var(--side-padding);
     background-color: var(--clr-white);
     z-index: 2;
+    position: relative;
 }
 
 header > * {
@@ -18,130 +19,99 @@ header > * {
 
 .header--nav {
     display: flex;
-    padding: 0;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 8px;
     list-style: none;
-    gap: clamp(8px, 1.5vw, 20px); 
+    margin-inline: auto;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    width: 82%;
 }
 
-.header--nav > * {
+.nav-bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(hsla(233, 26%, 24%, .8) 5%, transparent);
+}
+
+header > .green-btn {
+    display: none;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.header--nav > li {
     border-bottom: 2px solid transparent;
 }
 
-.section-1 {
-    position: relative;
-    margin: 0px;
-    grid-template-columns: 40vw 55vw;
-    justify-content: space-between;
-    align-items: center;
-    height: max(550px, 90vh);
-    background-color: var(--clr-very-light-gray);
-    padding: 0px;
+.header--nav > li:hover {
+    cursor: pointer;
+    border-color: var(--clr-dark);
 }
 
-.section-1--text {
-    margin-left: var(--side-padding);
+.hide {
+    display: none;
+}
+
+#section-1 {
+    padding: 0px 0px 3em 0px;
+}
+
+#section-1 > .image-content {
+    padding-inline: calc(var(--side-padding)/3);
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#section-1 > .image-content > img {
+    margin-top: -10%;
+}
+
+#section-1 > .text-content {
+    display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.bg-positioner {
-    height: 100%;
-    width: 100%;
-    background: url(./images/bg-intro-desktop.svg);
-    background-repeat: no-repeat;
-    background-size: 125%;
-    background-position: left;
-}
-
-.cellphones-image{
-    position: absolute;
-    top: -25%;
-    right: -8%;
-    min-width: 620px;
-    max-width: 50vw;
-}
-
-.section-2 {
+    align-items: center;
+    text-align: center;
     padding-inline: var(--side-padding);
-    padding-bottom: 4rem;
-    flex-direction: column;
-    gap: 50px;
-    font-size: var(--fs-200);
-    color: var(--clr-grayish-blue);
+}
+
+#section-2 {
     background-color: var(--clr-light-grayish-blue);
 }
 
-.section-2 h3 {
-    color: var(--clr-dark-blue);
-}
-
-.section-2 > .four-items-grid > *{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: left;
-}
-
-.section-2 > .text-content {
-    width: clamp(300px, 40vw, 700px);
-}
-
-.section-2 > .text-content > h2 {
-    margin-bottom: 10px;
-}
-
-.section-2 > .four-items-grid > * > img {
-    width: max(64px, 30%);
-}
-
-.section-3 {
-    padding-inline: var(--side-padding);
-    flex-direction: column;
-    gap: 50px;
-    font-size: var(--fs-200);
-    color: var(--clr-grayish-blue);
+#section-3 {
     background-color: var(--clr-very-light-gray);
-    padding-bottom: 4rem;
 }
 
-.article-item > img {
-    width: 100%;
-    aspect-ratio: 1.4 / 1;
-}
-
-.article-item > div {
+#section-3 > .grid > .flex > .text-content  {
+    align-self: flex-start;
+    text-align: left;
+    padding: 10px 20px 20px 20px;
+    background-color: var(--clr-white);
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-
-    padding: 10px;
-    padding-top: 0px;
-}
-
-.article-item {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 6px;
 }
 
 footer {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 2.5fr;
     padding-inline: var(--side-padding);
     background-color: var(--clr-dark-blue);
-    padding-block: 40px;
     align-items: center;
-    gap: 10px;
-}
-
-footer > :first-child, footer > :last-child {
-    flex-direction: column;
+    justify-items: center ;
     gap: 20px;
+    text-align: center;
 }
 
-footer > * {
-    height: fit-content;
-}
 
 footer ul {
     list-style: none;
@@ -149,24 +119,6 @@ footer ul {
     margin: 0px;
 }
 
-footer .links {
-    flex-direction: column;
-}
-
-footer > :last-child {
-    margin-block: auto;
-    align-items: right;
-    margin-left: auto;
-}
-
-footer button {
-    margin-left: auto;
-}
-
-.social-buttons {
-    display: flex;
-    gap: 5px;
-}
 
 .attribution {
     background-color: var(--clr-dark-blue);
@@ -176,13 +128,4 @@ footer button {
 
 .attribution a {
     color: var(--clr-grayish-blue)
-}
-
-/*-----------------*/
-/*Pseudo-classes   */
-/*-----------------*/
-
-.header--nav > *:hover {
-    cursor: pointer;
-    border-color: var(--clr-dark-blue)
 }

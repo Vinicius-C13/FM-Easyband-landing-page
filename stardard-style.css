@@ -9,12 +9,12 @@
     --clr-very-light-gray: hsl(0, 0%, 98%);
     --clr-white: hsl(0, 0%, 100%);
 
-    --side-padding: clamp(40px, 10vw, 150px);
+    --side-padding: clamp(20px, 8vw, 150px);
 
     /*Font-size*/
     --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
     --fs-800: 3.5rem;
-    --fs-700: 1.5rem;
+    --fs-700: 2rem;
     --fs-600: 1rem;
     --fs-500: 1.75rem;
     --fs-400: 0.9375rem;
@@ -84,10 +84,7 @@ body{
     font-size: var(--fs-300);
     color: rgb(var(--clr-dark));
 
-    display: grid;
     grid-template-rows: min-content 1fr;
-
-    overflow-x: hidden;
 }
 
 /*make images easy to work with*/
@@ -105,7 +102,7 @@ select{
 }
 
 /*Add a default margin to section*/
-section {padding-top: 4rem;}
+section, footer {padding-block: 4rem;}
 
 /*-----------------*/
 /*Utility Classes  */
@@ -138,6 +135,10 @@ section {padding-top: 4rem;}
 
 .flex {display: flex}
 
+button:hover {
+    cursor: pointer;
+}
+
 .green-btn {
     max-width: fit-content;
     background-image:linear-gradient(0.25turn, var(--clr-lime-green), var(--clr-bright-cyan));
@@ -145,10 +146,35 @@ section {padding-top: 4rem;}
     border-radius: 30px;
     border: none;
     font-size: var(--fs-200);
-    padding: 5px 15px;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+.four-items-section {
+    text-align: center;
+    padding-inline: var(--side-padding);
+}
+
+.four-items-section > :first-child {
+    margin-bottom: 2em;
+}
+
+.four-items-section > .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.four-items-section > .grid {
+    row-gap: 20px;
+}
+
+.four-items-section > .grid > .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .green-btn:hover {
-    cursor: pointer;
     background-image: linear-gradient(0.25turn, var(--clr-lime-green) 100%, var(--clr-bright-cyan));
 }
